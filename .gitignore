@@ -57,3 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# Eclipse Project files
+.settings
+.project
+.sublime-project
+.tern-project
