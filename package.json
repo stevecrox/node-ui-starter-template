@@ -1,0 +1,24 @@
+{
+  "name": "node-ui-starter-template",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server/src/app.js"
+  },
+  "license": {
+    "type": "Apache-2.0",
+    "url": "https://opensource.org/licenses/apache2.0.php"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stevecrox/node-ui-starter-template.git"
+  },
+  "dependencies": {
+    "express": "4.16.2"
+  },
+  "devDependencies": {
+    "bootstrap": "3.3.7",
+    "datatables": "1.10.13",
+    "webpack": "3.10.0"
+  }
+}
