@@ -19,6 +19,7 @@
   "devDependencies": {
     "bootstrap": "3.3.7",
     "datatables": "1.10.13",
+    "maven-deploy": "1.5.0",
     "webpack": "3.10.0"
   }
 }
