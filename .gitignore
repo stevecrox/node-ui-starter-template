@@ -62,3 +62,4 @@ typings/
 .project
 .sublime-project
 .tern-project
+**/*.war
