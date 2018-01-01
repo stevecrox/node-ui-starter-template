@@ -1,0 +1,16 @@
+[Unit]
+Description=
+After=network.target nss-lookup.target
+
+[Service]
+ExecStart=/usr/bin/npm start
+WorkingDirectory=/usr/lib/node-ui-starter-template
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=node-ui-starter-template
+User=node-ui-starter-template
+Group=node-ui-starter-template
+
+[Install]
+WantedBy=multi-user.target

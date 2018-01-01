@@ -14,6 +14,9 @@
     "url": "https://github.com/stevecrox/node-ui-starter-template.git"
   },
   "dependencies": {
+    "bootstrap": "3.3.7",
+    "jquery": "3.2.1",
+    "datatables": "1.10.13",
     "body-parser": "1.18.2",
     "css-loader": "^0.28.7",
     "errorhandler": "1.5.0",
@@ -25,9 +28,7 @@
     "style-loader": "^0.19.1"
   },
   "devDependencies": {
-    "bootstrap": "3.3.7",
-    "jquery": "3.2.1",
-    "datatables": "1.10.13",
+    "speculate": "1.7.4",
     "maven-deploy": "1.5.0",
     "html-webpack-plugin": "2.30.1",
     "extract-text-webpack-plugin": "3.0.2",
