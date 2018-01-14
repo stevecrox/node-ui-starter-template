@@ -9,18 +9,12 @@ const extractCSS = new ExtractTextPlugin('[name].css');
 const extractLESS = new ExtractTextPlugin('[name].less');
 
 module.exports = {
-	resolve: {
-	    extensions: ['.css'], //An empty string is no longer required.
-	    modules: [
-	      'bootstrap'
-	    ]
-	},
-	entry : {
-		'jquery.dataTables.min.css' : ['./node_modules/datatables/media/css/jquery.dataTables.min.css']
+	entry: {
+	    datatables: [ 'datatables.net-bs/css/dataTables.bootstrap.css' ]
 	},
 	output : {
 		path : path.join(appConfig.clientDirectory, 'stylesheets'),
-		filename : '[name]'
+		filename : '[name].css'
 	},
 	module : {
 		rules : [
