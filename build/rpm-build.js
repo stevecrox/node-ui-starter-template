@@ -21,7 +21,7 @@ rpm.build({
 	  url: appConfig.repository.url,
 	  license: appConfig.license.type,
 	  group: 'Development/Tools',
-	  rpmRootDir: path.join(__dirname, '../', rpmbuild),
+	  rpmRootDir: path.join(__dirname, '../', 'rpmbuild'),
 	  cwd: path.join(__dirname, '../'),
 	  files: rpmFiles,
 	  installScript: ['echo "test" > %{buildroot}/test.txt']

@@ -1,17 +1,9 @@
-const
-HtmlWebpackPlugin = require('html-webpack-plugin');
-const
-ExtractTextPlugin = require('extract-text-webpack-plugin');
-const
-webpack = require('webpack');
-const
-path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
 
 // Local configuration files used to dynamically configure the project
 var appConfig = require(path.join(__dirname, '../', 'config', 'config.js'));
-//
-var contextRootDirectory = path.join(__dirname, '../', 'client', 'src',
-		appConfig.contextRoot);
 
 const extractCSS = new ExtractTextPlugin('[name].css');
 const extractLESS = new ExtractTextPlugin('[name].less');
@@ -24,10 +16,10 @@ module.exports = {
 	    ]
 	},
 	entry : {
-		'bootstrap-theme' : ['bootstrap']
+		'jquery.dataTables.min.css' : ['./node_modules/datatables/media/css/jquery.dataTables.min.css']
 	},
 	output : {
-		path : path.join(contextRootDirectory, 'stylesheets'),
+		path : path.join(appConfig.clientDirectory, 'stylesheets'),
 		filename : '[name]'
 	},
 	module : {
