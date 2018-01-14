@@ -1,24 +1,14 @@
 var maven = require('maven-deploy');
+var fs = require('fs');
 var path = require('path');
-
-// Local configuration files used to dynamically configure the project
-var appConfig = require(path.join(__dirname, 'config.js'));
-var pjson = require(path.join(__dirname, '../', 'package.json'));
-
-// Retrieve the Package.JSON
-var clientDirectory = path.join(__dirname, '../', 'client', 'src', appConfig.contextroot);
-
-// Output the information we will be using.
-console.log("Artifact ID:\t" + pjson.name);
-console.log("Version:\t" + pjson.version);
-console.log("Directory:\t" + clientDirectory);
+var appConfig = require(path.join(__dirname, '../', 'config', 'config.js'));
 
 var config = {
     "groupId"      : appConfig.groupId,
-    "artifactId"   : pjson.name,
-    "version"      : pjson.version,
-    "buildDir"     : clientDirectory,
-    "finalName"    : pjson.name,
+    "artifactId"   : appConfig.name,
+    "version"      : appConfig.version,
+    "buildDir"     : appConfig.clientDirectory,
+    "finalName"    : appConfig.name,
     "type"         : "war",
     "fileEncoding" : "utf-8",
     "repositories" : [
@@ -29,12 +19,28 @@ var config = {
     ]
 };
 
-maven.config(config);
+// Only perform a full release on the 'production' box, we will flag this on the CI when ready to release
+var snapshot = 'production' !== process.env.env;
 
-// Development only
-if ('development' === process.env.env) {
-  maven.install();
-} else {
-  maven.install();
-  //maven.deploy('release', false);
+// If we are in a Dev mode then push a SNAPSHOT build of the system.
+if (snapshot) {
+	config.version = config.version + '-SNAPSHOT';
 }
+
+// Set the application configuration
+maven.config(config);
+maven.install();
+
+
+// If the system isn't a development build.
+if (!snapshot) {
+  console.log('Deploying the WAR to a remote repository');
+  maven.deploy('release', snapshot);
+}
+
+//// We generate a WAR this will remove it
+var warPath = path.join(appConfig.clientDirectory, appConfig.name  + '.war');
+//fs.unlinkSync(warPath, (err) => {
+//	  if (err) throw err;
+//	  console.log('successfully deleted: ' + warPath);
+//	});
