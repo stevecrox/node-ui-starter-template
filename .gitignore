@@ -63,3 +63,5 @@ typings/
 .sublime-project
 .tern-project
 **/*.war
+client/src/**/cots/*.*
+rpmbuild/**/*.*
