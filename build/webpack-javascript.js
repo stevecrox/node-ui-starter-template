@@ -9,12 +9,22 @@ var contextRootDirectory = path.join(__dirname, '../', 'client', 'src', appConfi
 module.exports = {
   entry: {
 	  indexBundle: [ 'bootstrap', 'jquery' ],
+	  tablesBundle: [ 'bootstrap', 'jquery', 'datatables.net', 'datatables.net-bs' ],
+  },
+  resolve: {
+	  alias: {
+	        jquery: "jquery/src/jquery"
+	  }
   },
   output: {
     path: path.join(contextRootDirectory, 'cots'),
     filename: '[name].js'
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.ProvidePlugin({
+    	   $: "jquery",
+    	   jQuery: "jquery"
+    	  })
   ]
 };

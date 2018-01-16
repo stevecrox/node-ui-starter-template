@@ -5,7 +5,8 @@ var appConfig = require(path.join(__dirname, '../', 'config', 'config.js'));
 
 module.exports = {
 	entry: {
-	    cots: [ "bootstrap/dist/css/bootstrap.css", "bootstrap/dist/css/bootstrap-theme.css"]
+	    bootstrap: [ "bootstrap/dist/css/bootstrap.css", "bootstrap/dist/css/bootstrap-theme.css"],
+	    datatables: [ "datatables.net-bs/css/dataTables.bootstrap.css" ]
 	},
 	output : {
 		path : path.join(appConfig.clientDirectory, 'cots'),

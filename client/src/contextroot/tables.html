@@ -13,6 +13,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="cots/bootstrap.css" rel="stylesheet">
+    <link href="cots/datatables.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="stylesheets/theme.css" rel="stylesheet">
   </head>
@@ -32,9 +33,9 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="graphs.html">Graphs</a></li>
-            <li><a href="tables.html">Tables</a></li>
+            <li class="active"><a href="tables.html">Tables</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -47,10 +48,14 @@
           <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
       </div>
     </div>
+    <div class="container">
+      <table id="example" class="display" cellspacing="0" width="100%">
+    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="cots/indexBundle.js"></script>
+    <script src="cots/tablesBundle.js"></script>
+    <script src="js/tables.js"></script>
   </body>
 </html>
