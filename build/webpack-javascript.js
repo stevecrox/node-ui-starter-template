@@ -11,7 +11,7 @@ module.exports = {
 	  indexBundle: [ 'bootstrap', 'jquery' ],
   },
   output: {
-    path: path.join(contextRootDirectory, 'js', 'cots'),
+    path: path.join(contextRootDirectory, 'cots'),
     filename: '[name].js'
   },
   plugins: [
