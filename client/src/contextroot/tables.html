@@ -12,8 +12,7 @@
     <title>Starter Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="cots/bootstrap.css" rel="stylesheet">
-    <link href="cots/datatables.css" rel="stylesheet">
+    <link href="cots/tablesBundle.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="stylesheets/theme.css" rel="stylesheet">
   </head>
@@ -48,14 +47,22 @@
           <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
       </div>
     </div>
+
     <div class="container">
-      <table id="example" class="display" cellspacing="0" width="100%">
+      <table id="example"></table>
     </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="cots/tablesBundle.js"></script>
+    <script src="js/clients/systemclient.js"></script>
+    <script src="js/shared.js"></script>
     <script src="js/tables.js"></script>
   </body>
+  <footer class="page-footer center-on-small-only">
+    <div class="container-fluid">
+      <p id="footer-version">© 2018 Copyright</p>
+    </div>
+  </footer>
 </html>
