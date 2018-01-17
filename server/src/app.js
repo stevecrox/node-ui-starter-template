@@ -14,8 +14,7 @@ var path = require('path');
 /**
  * Define all Files which hold handling for REST calls.
  */
-var routes = require('./routes/index');
-var user = require('./routes/user');
+var systemAPI = require('./routes/system');
 
 //Local configuration files used to dynamically configure the project
 var appConfig = require(path.join(__dirname, '../', '../', 'config', 'config.js'));
@@ -51,11 +50,11 @@ if ('development' === appConfig.environment) {
 
 
 /**
- * This is where we define
+ * This is where we define out REST API calls
  */
+app.get('/' + appConfig.contextRoot + '/system/name', systemAPI.name);
+app.get('/' + appConfig.contextRoot + '/system/version', systemAPI.version);
 
-app.get('/', routes.index);
-app.get('/users', user.list);
 
 // Start the server
 app.listen(appConfig.port, function() {
